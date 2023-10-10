@@ -1,0 +1,123 @@
+@use '../utils/index' as *;
+
+.contest-module {
+    text-align: center;
+    padding: 150px 0px;
+    overflow: hidden;
+    position: relative;
+
+    @media(min-width: $lg) {
+        padding-top: 185px;
+        padding-bottom: 135px;
+    }
+
+    .container {
+        position: relative;
+    }
+    
+    h3 {
+        margin-bottom: -10px;
+
+        @media(min-width: $lg) {
+            margin-bottom: 0;
+        }
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin: 0;
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .btn {
+        margin-top: 30px;
+    }
+
+    .deco-lemonade,
+    .deco-leaf-reverse {
+        display: block;
+    }
+
+    .deco-lemonade {
+        bottom: -90px;
+        right: -35px;
+
+        @media(max-width: $xs) {
+            bottom: -120px;
+        }
+
+        @media(min-width: $lg) {
+            right: 0;
+            bottom: -45px;
+        }
+
+        img {
+            width: 168px;
+        }
+    }
+
+    .deco-leaf-reverse {
+        top: -90px;
+        left: -83px;
+
+        @media(min-width: $lg) {
+            left: 0;
+        }
+
+        img {
+            width: 250px;
+
+            @media(max-width: $xs) {
+                width: 220px;
+            }
+        }
+    }
+
+    .deco-single-can,
+    .deco-two-cans {
+        position: absolute;
+        display: none;
+
+        @media(min-width: $xl) {
+            display: block;
+        }
+    }
+
+    .deco-single-can {
+        width: 197px;
+        bottom: 30px;
+
+        @media(min-width: $xl) {
+            right: 20px;
+        }
+
+        @media(min-width: $xxl) {
+            right: 100px;
+        }
+    }
+
+    .deco-two-cans {
+        width: 335px;
+
+        @media(min-width: $xl) {
+            left: 4px;
+            top: 57px;
+            width: 280px;
+        }
+
+        @media(min-width: $xxl) {
+            width: 335px;
+            left: 60px;
+        }
+
+        @media(min-width: $hd) {
+            left: 20px;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+@use '../utils/index' as *;
+
+.deco-lemonade,
+.deco-leaf,
+.deco-water-drop,
+.deco-peach,
+.deco-leaf-reverse {
+    display: none;
+    position: absolute;
+}
+
+body.decorated-bg {
+    .deco-lemonade {
+        @media(min-width: $xl) {
+            top: 340px;
+            right: 50px;
+        }
+    
+        @media(min-width: $xxl) {
+            right: 113px;
+        }
+    
+        img {
+            @media(min-width: $xl) {
+                width: 180px;
+            }
+    
+            @media(min-width: $xxl) {
+                width: 235px;
+            }
+        }
+    }
+    
+    .deco-leaf {
+        top: 580px;
+    
+        @media(min-width: $xl) {
+            left: 60px;
+        }
+    
+        @media(min-width: $xxl) {
+            left: 158px;
+        }
+    
+        img {
+            @media(min-width: $xl) {
+                width: 145px;
+            }
+    
+            @media(min-width: $xxl) {
+                width: 195px;
+            }
+        }
+    }
+    
+    .deco-water-drop {
+        top: 1075px;
+    
+        @media(min-width: $xl) {
+            right: 120px;
+        }
+    
+        @media(min-width: $xxl) {
+            right: 210px;
+        }
+    
+        img {
+            @media(min-width: $xl) {
+                width: 122px;
+            }
+    
+            @media(min-width: $xxl) {
+                width: 172px;
+            }
+        }
+    }
+    
+    .deco-peach {
+        top: 1600px;
+    
+        @media(min-width: $xl) {
+            left: 100px;
+        }
+    
+        @media(min-width: $xxl) {
+            left: 120px;
+        }
+    
+        img {
+            @media(min-width: $xl) {
+                width: 138px;
+            }
+    
+            @media(min-width: $xxl) {
+                width: 188px;
+            }
+        }
+    }
+    
+    .deco-leaf-reverse {
+        top: 2250px;
+    
+        @media(min-width: $xl) {
+            right: 35px;
+        }
+    
+        @media(min-width: $xxl) {
+            right: 90px;
+        }
+    
+        img {
+            @media(min-width: $xl) {
+                width: 230px;
+            }
+    
+            @media(min-width: $xxl) {
+                width: 280px;
+            }
+        }
+    }
+    
+}

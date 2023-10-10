@@ -1,0 +1,290 @@
+@use '../utils/index' as *;
+
+.steps {
+    $self: &;
+    padding-top: 95px;
+    padding-bottom: 50px;
+    text-align: center;
+    overflow: hidden;
+
+    @media(min-width: $md) {
+        margin-top: -45px;
+        padding-top: 0;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    &__slider {
+        @media(min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__slider-number {
+        margin-bottom: 22px;
+
+        span {
+            font-size: 120px;
+        }
+
+        #{$self}__slider-number-deco {
+            display: none;
+        }
+    }
+
+    &__slider-number,
+    &__step-number {
+        position: relative;
+    }
+
+
+    &__slider-number span,
+    &__step-number span {
+        font-family: $fnt-lipton-highlight-clean;
+        display: block;
+    }
+
+    &__slider-number &__slider-number-deco,
+    &__step-number &__step-number-deco {
+        position: absolute;
+    }
+
+    &__slider-text p,
+    &__step-text p {
+        font-family: $fnt-intro-lipton-black-inline-caps;
+        font-size: 21px;
+        margin: 0;
+    }
+
+    &__slider-text {
+        display: none;
+
+        p {
+            word-wrap: break-word;
+        }
+    }
+
+    &__inner {
+        display: none;
+
+        @media(min-width: $lg) {
+            display: flex;
+        }
+    }
+
+    &__step {
+        width: 240px;
+
+        @media(min-width: $lg) {
+            &:not(:last-of-type) {
+                margin-right: 30px;
+            }
+        }
+
+        &:nth-child(1) .steps__step-number-deco {
+            &:first-of-type {
+                bottom: -30px;
+                width: 108px;
+                left: -23px;
+
+                @media(min-width: $xl) {
+                    width: 134px;
+                    left: -25px;
+                }
+            }
+
+            &:last-of-type {
+                width: 100px;
+                top: 15px;
+                right: -21px;
+
+                @media(min-width: $xl) {
+                    width: 110px;
+                    right: -15px;
+                }
+            }
+        } 
+
+        &:nth-child(2) .steps__step-number-deco {
+            &:first-of-type {
+                bottom: -23px;
+                width: 76px;
+                left: 3px;
+                z-index: -1;
+
+                @media(min-width: $xl) {
+                    width: 82px;
+                }
+            }
+
+            &:last-of-type {
+                right: -11px;
+                top: 31px;
+                width: 85px;
+
+                @media(min-width: $xl) {
+                    width: 95px;
+                    right: -20px;
+                }
+            }
+        } 
+
+        &:nth-child(3) .steps__step-number-deco {
+            &:first-of-type {
+                width: 99px;
+                left: -15px;
+                top: 40px;
+            }
+
+            &:last-of-type {
+                width: 95px;
+                right: 0;
+                bottom: -36px;
+            }
+        } 
+
+        &:nth-child(4) .steps__step-number-deco {
+            &:first-of-type {
+                z-index: -1;
+                top: 19px;
+                left: 13px;
+            }
+
+            &:last-of-type {
+                width: 92px;
+                bottom: 2px;
+                right: -9px;
+
+                @media(min-width: $xl) {
+                    width: 102px;
+                    right: -22px;
+                }
+            }
+        } 
+    }
+
+    &__step-number {
+        margin-bottom: 30px;
+
+        span {
+            font-size: 170px;
+            pointer-events: none;
+        }
+    }
+
+    // Swiper
+
+    .swiper-wrapper {
+        padding-bottom: 48px;
+    }
+
+    .swiper-slide {
+        position: initial;
+        padding-top: 30px;
+
+        &:nth-child(1) {
+            .steps__slider-number-deco {
+                &:first-of-type {
+                    bottom: -30px;
+                    left: -65px;
+                }
+
+                &:last-of-type {
+                    top: 0;
+                    right: -60px;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            .steps__slider-number-deco {
+                &:first-of-type {
+                    left: -42px;
+                    bottom: -23px;
+                }
+
+                &:last-of-type {
+                    width: 85px;
+                    right: -43px;
+                    top: 30px;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            .steps__slider-number-deco {
+                &:first-of-type {
+                    left: -50px;
+                    top: 32px;
+                }
+
+                &:last-of-type {
+                    right: -46px;
+                    bottom: -46px;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            .steps__slider-number-deco {
+                &:first-of-type {
+                    width: 90px;
+                    left: -11px;
+                    top: 30px;
+                    z-index: -1;
+                }
+
+                &:last-of-type {
+                    right: -64px;
+                    bottom: -8px;
+                }
+            }
+        }
+    }
+
+    // Active Slide
+
+    .swiper-slide.swiper-slide-active {
+        padding-top: 0;
+
+        #{$self}__slider-number span {
+            font-size: 170px;
+        }
+
+        #{$self}__slider-text {
+            margin: 0px -50px;
+        }
+
+        #{$self}__slider-text,
+        #{$self}__slider-number-deco {
+            display: block;
+        }
+    }
+
+    // Swiper Pagination
+
+    .swiper-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+
+        .swiper-pagination-bullet {
+            width: 6px;
+            height: 6px;
+            background: none;
+            background-color: $clr-white;
+            opacity: 1;
+    
+            &-active {
+                border: 4px solid $clr-white;
+                background-color: transparent;
+                width: 14px;
+                height: 14px;
+                transition: width 0.3s ease, height 0.3s ease;
+            }
+        }
+    }
+}

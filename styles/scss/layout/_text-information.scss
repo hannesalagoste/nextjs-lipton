@@ -1,0 +1,35 @@
+@use '../utils/index' as *;
+
+.text-information {
+    padding: 90px 0px;
+    text-align: center;
+
+    @media(min-width: $lg) {
+        padding-top: 110px;
+        padding-bottom: 280px;
+    }
+
+    &__inner {
+        max-width: 680px;
+        width: 100%;
+        margin: 0 auto;
+
+        a {
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+
+            @include hover {
+                opacity: 0.6;
+            }
+        }
+
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+    }
+}

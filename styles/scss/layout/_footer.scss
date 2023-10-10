@@ -1,0 +1,186 @@
+@use '../utils/index' as *;
+
+.footer {
+    $self: &;
+    background-color: $clr-primary;
+    padding-bottom: 59px;
+    position: relative;
+    margin-top: auto;
+    flex-shrink: 0;
+
+    &#{$self}--with-deco {
+        .top-deco {
+            @media(min-width: $lg) {
+                display: block;
+            }
+        }
+    }
+
+    .top-deco {
+        display: none;
+        position: absolute;
+        top: -260px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &__social_lipton {
+        background-image: url("../../../public/assets/footer-bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 25px 0px;
+        position: relative;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media(min-width: $md) {
+                justify-content: center;
+            }
+
+            > #{$self}__logo {
+                margin-right: 38px;
+                
+                @media(max-width: $xs) {
+                    margin-right: 24px;
+                }
+            }
+        }
+
+        #{$self}__logo img {
+            width: 119px;
+            max-width: initial;
+
+            @media(max-width: $xs) {
+                width: 100px;
+            }
+        }
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+
+            @media(min-width: $md) {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            h5 {
+                margin: 0;
+                max-width: 250px;
+                width: 100%;
+
+                @media(min-width: $md) {
+                    margin-right: 30px;
+                    font-size: 24px;
+                }
+            }
+
+            > div {
+                display: flex;
+                flex-wrap: wrap;
+
+                @media(min-width: $md) {
+                    align-items: center;
+                }
+
+                > a {
+                    margin-top: 10px;
+                    padding-bottom: 10px;
+
+                    &:not(:last-of-type) {
+                        margin-right: 24px;
+                    }
+                }
+            }
+
+            > div a img {
+                @media(max-width: $xs) {
+                    width: 30px;
+                }
+            }
+
+            > div a {
+                transition: all 0.3s ease;
+
+                @include hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+
+        .scroll-to-top {
+            position: absolute;
+            top: -25px;
+            right: 10px;
+
+            @media(max-width: $xs) {
+                top: -20px;
+            }
+
+            @media(min-width: $lg) {
+                display: none;
+            }
+
+            img {
+                @media(max-width: $xs) {
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+    &__links {
+        overflow: hidden;
+
+        .container {
+            padding-top: 26px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba($clr-white, 0.1);
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0px -22px;
+
+            li {
+                margin-bottom: 7px;
+                margin-top: 7px;
+                padding-right: 22px;
+                padding-left: 22px;
+            }
+
+            li a {
+                color: $clr-white;
+                font-family: $fnt-intro-lipton-semi-bold;
+                transition: opacity 0.3s ease;
+
+                @media(max-width: $xs) {
+                    font-size: 16px;
+                }
+
+                @include hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        p {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@use '../utils/index' as *;
+
+.end-of-promo {
+    text-align: center;
+    padding-bottom: 200px;
+    padding-top: 90px;
+    overflow: hidden;
+
+    @media(min-width: $lg) {
+        margin-top: -50px;
+    }
+
+    &__deco {
+        position: absolute;
+
+        &:first-of-type,
+        &:last-of-type {
+            pointer-events: none;
+            
+            @media(min-width: $lg) {
+                width: 195px;
+            }
+        }
+
+        &:first-of-type {
+            width: 123px;
+            top: -90px;
+            left: -32px;
+
+            @media(max-width: $xs) {
+                width: 110px;
+                top: -89px;
+                left: -28px;
+            }
+
+            @media(min-width: $md) {
+                width: 153px;
+                left: -65px;
+                top: -100px;
+            }
+
+            @media(min-width: $lg) {
+                left: -87px;
+                top: -97px;
+            }
+        }
+
+        &:last-of-type {
+            width: 179px;
+            bottom: -110px;
+            right: -46px;
+
+            @media(max-width: $xs) {
+                width: 159px;
+                bottom: -96px;
+                right: -41px;
+            }
+
+            @media(min-width: $md) {
+                bottom: -100px;
+                right: -40px;
+            }
+
+            @media(min-width: $lg) {
+                bottom: -110px;
+            }
+        }
+    }
+
+    &__inner {
+        max-width: 470px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        padding: 0px 18px;
+
+        @media(min-width: $lg) {
+            max-width: 740px;
+        }
+    }
+}

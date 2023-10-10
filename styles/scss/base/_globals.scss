@@ -1,0 +1,142 @@
+@use '../utils/index' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: $fnt-intro-lipton-regular;
+    color: $clr-white;
+    font-size: 18px;
+    line-height: 1.2;
+
+    @media(max-width: $xs) {
+        font-size: 16px;
+    }
+
+    &.disable-scroll {
+        overflow: hidden;
+    }
+
+    &.decorated-bg {
+        position: relative;
+
+        main {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .deco-lemonade,
+        .deco-leaf,
+        .deco-water-drop,
+        .deco-peach,
+        .deco-leaf-reverse {
+            @media(min-width: $xl) {
+                display: block;
+            }
+        }
+    }
+
+    &.error-page {
+        .dialog-off-canvas-main-canvas {
+            height: 100%;
+        }
+    }
+
+    &:not(.home) {
+        .main .main__inner {
+            justify-content: center;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-image: url("../../../public/assets/lipton-bg.jpg");
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-position: center;
+    z-index: 0;
+    position: relative;
+
+    @media(min-width: $lg) {
+        background-size: 100% auto;
+        min-height: calc(100% - 96px);
+    }
+
+    &__inner {
+        flex-grow: 1;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $clr-white;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0px 12px;
+    width: 100%;
+
+    &--xs {
+        max-width: 658px;
+    }
+
+    &--sm {
+        max-width: 892px;
+    }
+
+    &--lg {
+        max-width: 1052px;
+    }
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

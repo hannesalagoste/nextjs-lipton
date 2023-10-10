@@ -1,0 +1,28 @@
+@use '../utils/index' as *;
+
+.btn {
+    font-size: 18px;
+    line-height: 1; 
+    background-color: $clr-primary;
+    color: $clr-white;
+    padding: 16px 32px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    font-family: $fnt-intro-lipton-black-caps;
+
+    @media(max-width: $xs) {
+        font-size: 16px;
+    }
+
+    &::after {
+        content: url("../../../public/assets/img/_icn/arrow-white-right.svg");
+        margin-left: 15px;
+    }
+
+    @include hover {
+        opacity: 0.8;
+    }
+}

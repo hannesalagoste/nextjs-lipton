@@ -1,0 +1,206 @@
+@use '../utils/index' as *;
+
+.introduction {
+    overflow: hidden;
+    padding-top: 190px;
+    padding-bottom: 50px;
+    $self: &;
+
+    &:last-of-type {
+        padding-bottom: 140px;
+
+        @media(min-width: $lg) {
+            padding-bottom: 100px;
+        }
+    }
+
+    @media(min-width: $lg) {
+        padding-top: 240px;
+        padding-bottom: 25px;
+    }
+
+    &__inner {
+        background-color: $clr-white;
+        color: $clr-primary;
+        position: relative;
+        padding: 40px 20px;
+        text-align: center;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+
+        @media(min-width: $md) {
+            max-width: 80%;
+        }
+
+        @media(min-width: $lg) {
+            max-width: 800px;
+            padding: 40px 83px;
+        }
+
+        span {
+            font-family: $fnt-intro-lipton-black-caps;
+            line-height: 1.2;
+            font-size: 36px;
+
+            @media(min-width: $lg) {
+                font-size: 48px;
+            }
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            line-height: 1;
+
+            @media(min-width: $lg) {
+                font-size: 48px;
+            }
+        }
+    }
+
+    &__text {
+        max-width: 460px;
+        width: 100%;
+        margin: 0 auto;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+
+            &:last-of-type {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    &__person,
+    &__deco-leaf,
+    &__deco-peach,
+    &__cans {
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &__person {
+        top: -182px;
+        z-index: -1;
+        width: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media(min-width: $lg) {
+            width: 435px;
+            transform: none;
+            left: -124px;
+            top: -228px;
+        }
+    }
+
+    &__deco-leaf {
+        width: 116px;
+        bottom: -65px;
+        left: -35px;
+
+        @media(min-width: $md) {
+            width: 130px;
+        }
+
+        @media(min-width: $lg) {
+            width: 190px;
+            bottom: -77px;
+            left: -53px;
+        }
+    }
+
+    &__deco-peach {
+        top: 0;
+        right: 0;
+        width: 109px;
+        top: -32px;
+        right: -39px;
+
+        @media(min-width: $md) {
+            width: 140px;
+            top: -49px;
+            right: -44px;
+        }
+
+        @media(min-width: $lg) {
+            width: 170px;
+            top: -57px;
+            right: -56px;
+        }
+    }
+
+    &__cans {
+        width: 209px;
+        bottom: -160px;
+        left: -95px;
+
+        @media(min-width: $md) {
+            width: 229px;
+            bottom: -91px;
+            left: -143px;
+        }
+
+        @media(min-width: $lg) {
+            width: 350px;
+            bottom: -108px;
+            left: -189px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: -24px;
+        max-width: 230px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        @media(min-width: $lg) {
+            max-width: 260px;
+        }
+        
+        > a {
+            margin-bottom: 24px;
+            margin-right: 12px;
+            margin-left: 12px;
+            transition: transform 0.3s ease;
+
+            @include hover {
+                transform: translateY(-5px);
+            }
+
+            &:nth-child(3n) {
+                margin-right: 0px;
+            }
+            
+            @media(min-width: $lg) {
+                &:nth-child(3n) {
+                    margin-right: 12px;
+                }
+
+                &:nth-child(4n) {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+
+    // Reverse modifier
+
+    &#{$self}--reverse {
+        #{$self}__person {    
+            @media(min-width: $lg) {
+                left: initial;
+                right: -124px;
+            }
+        }
+    }
+}

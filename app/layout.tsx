@@ -1,7 +1,10 @@
-import './globals.css'
+import "../styles/globals.css";
+import "styles/scss/main.scss"
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Nav from "../components/Nav"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +23,13 @@ export default function RootLayout({
     <html lang="en">
 
       <body >
-        <main className='app'>
-          <Nav />
+      <Header />
+        <main className='main'>
+        <div className="main__inner">
           {children}
+          </div>
         </main>
+        <Footer />
       </body>
     </html>
   )
