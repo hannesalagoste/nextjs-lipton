@@ -39,7 +39,7 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('/api/contact', {
+            const response =await fetch('https://drupal9.3.micro-plattform.com/webform_rest/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

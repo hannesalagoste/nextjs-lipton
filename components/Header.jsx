@@ -1,5 +1,5 @@
-"use client";
-import CustomFunctions from '../app/nav/customfunctions'
+"use client"
+import CustomFunctions from '../app/custom/customfunctions'
 
 
 const Header = () => {
